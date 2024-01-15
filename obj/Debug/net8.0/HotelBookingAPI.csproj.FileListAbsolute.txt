@@ -46,3 +46,4 @@
 /home/tipu/Documents/Code/C# MS/HotelBookingAPI/obj/Debug/net8.0/HotelBookingAPI.pdb
 /home/tipu/Documents/Code/C# MS/HotelBookingAPI/obj/Debug/net8.0/HotelBookingAPI.genruntimeconfig.cache
 /home/tipu/Documents/Code/C# MS/HotelBookingAPI/obj/Debug/net8.0/ref/HotelBookingAPI.dll
+/home/tipu/Documents/Code/C# MS/HotelBookingAPI/obj/Debug/net8.0/HotelBookingAPI.sourcelink.json
