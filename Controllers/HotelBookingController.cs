@@ -6,7 +6,7 @@ using MongoDB.Driver;
 namespace HotelBookingAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     public class HotelBookingController : ControllerBase
     {
         private readonly ApiContext _context;
@@ -17,10 +17,10 @@ namespace HotelBookingAPI.Controllers
 
 
         [HttpPost("/bookings")]
-        public JsonResult Create(HotelBooking booking)
+        public IActionResult Create(HotelBooking booking)
         {
             _context.Bookings.InsertOne(booking);
-            return new JsonResult(Ok(booking));
+            return Ok(booking);
         }
 
         [HttpPut("/bookings/{id}")]
@@ -34,7 +34,7 @@ namespace HotelBookingAPI.Controllers
 
             if (result == null)
             { return new JsonResult(NotFound()); }
-            return new JsonResult(Ok(result));
+            return Ok(result);
         }
 
         [HttpGet("/bookings")]
@@ -52,7 +52,7 @@ namespace HotelBookingAPI.Controllers
             if (booking == null)
             { return new JsonResult(NotFound()); }
             else
-            { return new JsonResult(Ok(booking)); }
+            { return Ok(booking); }
         }
 
         [HttpDelete("/bookings/{id}")]
