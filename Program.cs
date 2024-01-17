@@ -4,7 +4,7 @@ using HotelBookingAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<ApiContext>(); // Register ApiContext as a singleton
+builder.Services.AddScoped<ApiContext>(); // Register ApiContext as a singleton
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

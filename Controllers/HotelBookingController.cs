@@ -33,7 +33,7 @@ namespace HotelBookingAPI.Controllers
             var result = _context.Bookings.FindOneAndUpdate(filter, updated);
 
             if (result == null)
-            { return new JsonResult(NotFound()); }
+            { return NotFound(); }
             return Ok(result);
         }
 
@@ -41,7 +41,7 @@ namespace HotelBookingAPI.Controllers
         public IActionResult GetAll()
         {
             var result = _context.Bookings.Find(_ => true).ToList();
-            if (result == null || result.Count == 0) { return new JsonResult(NotFound()); }
+            if (result == null || result.Count == 0) { return NotFound(); }
             else { return Ok(result); }
         }
 
@@ -50,7 +50,7 @@ namespace HotelBookingAPI.Controllers
         {
             var booking = _context.Bookings.Find(x => x.Id == id).FirstOrDefault();
             if (booking == null)
-            { return new JsonResult(NotFound()); }
+            { return NotFound(); }
             else
             { return Ok(booking); }
         }
@@ -59,9 +59,9 @@ namespace HotelBookingAPI.Controllers
         public IActionResult Delete(string id)
         {
             var booking = _context.Bookings.Find(x => x.Id == id).FirstOrDefault();
-            if (booking == null) { return new JsonResult(NotFound()); }
+            if (booking == null) { return NotFound(); }
             else { _context.Bookings.DeleteOne(x => x.Id == id); }
-            return new JsonResult(NoContent());
+            return NoContent();
         }
     }
 }
