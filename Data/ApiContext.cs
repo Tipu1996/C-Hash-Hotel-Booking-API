@@ -4,11 +4,11 @@ using MongoDB.Driver;
 
 namespace HotelBookingAPI.Data
 {
-    public class ApiContext : DbContext
+    public class ApiContext
     {
         private readonly IConfiguration _configuration;
         public IMongoCollection<HotelBooking> Bookings { get; set; }
-        public ApiContext(DbContextOptions<ApiContext> options, IConfiguration configuration) : base(options)
+        public ApiContext(IConfiguration configuration)
         {
             _configuration = configuration;
             string? connectionString = _configuration.GetConnectionString("MongoDB");
