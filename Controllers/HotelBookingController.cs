@@ -23,7 +23,7 @@ namespace HotelBookingAPI.Controllers
             return new JsonResult(Ok(booking));
         }
 
-        [HttpPut("/booking/{id}")]
+        [HttpPut("/bookings/{id}")]
         public IActionResult UpdateById(string id, HotelBooking update)
         {
             var filter = Builders<HotelBooking>.Filter.Eq(x => x.Id, id);
